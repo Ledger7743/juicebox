@@ -15,6 +15,7 @@ const {
   createPostTag,
   getPostById,
   getPostsByTagName,
+  getAllTags,
 } = require("./index");
 
 // async function testDB() {
