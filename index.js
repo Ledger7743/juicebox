@@ -1,11 +1,10 @@
 // this file is for express!
 
+require("dotenv").config();
+
 const PORT = 3000;
 const express = require("express");
 const server = express();
-
-const apiRouter = require("./api");
-server.use("/api", apiRouter);
 
 // installing Morgan (before body-logging middleware)
 const morgan = require("morgan");
@@ -13,6 +12,9 @@ server.use(morgan("dev"));
 // The first, morgan('dev'), is a function which logs out the incoming requests
 
 server.use(express.json());
+
+const apiRouter = require("./api");
+server.use("/api", apiRouter);
 
 // ------- example below -----
 // server.use tells the server to always call this function
