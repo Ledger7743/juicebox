@@ -51,6 +51,7 @@ usersRouter.post("/register", async (req, res, next) => {
         expiresIn: "1w",
       }
     );
+    console.log("THIS IS MY TOKEN: ------XXXX", token);
 
     res.send({
       message: "thank you for signing up",
@@ -79,7 +80,7 @@ usersRouter.post("/login", async (req, res, next) => {
       // create token & return to user
       // delete user.password;
       const token = jwt.sign(user, JWT_SECRET, { expiresIn: "1h" });
-      console.log("this is my token: ------> ", token);
+      console.log("this is my token: -----111111-> ", token);
       res.send({ message: "you're logged in!" });
     } else {
       next({
